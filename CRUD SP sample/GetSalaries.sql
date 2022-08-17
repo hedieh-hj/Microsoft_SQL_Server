@@ -14,17 +14,17 @@ BEGIN
 		SELECT @CompanyTitle = CompanyTitle FROM Company
 
 		SELECT  ROW_NUMBER() OVER(PARTITION BY [NationalCode] , [Year] , [Month] ORDER BY [NationalCode] ASC) RowID	,
-				[Year]						 					   ,
-				[Month]						 					   ,
+				[Year]						 	       ,
+				[Month]						 	       ,
 				@CompanyTitle				 CompanyTitle          ,
 				[WorkshopName]				 WorkUnitTitle         ,
-				SUM([AddPrice] - [MinPrice]) TotalPureSalaryValue  ,
-				SUM([MinPrice])				 TotalLegalMinValue
+				SUM([AddPrice]-[MinPrice]-[summinprice]) TotalPureSalaryValue  ,
+				SUM([MinPrice]+[summinprice])		 TotalLegalMinValue
 	
 		FROM [salaryorash].[SalaryInfo]
 		WHERE   NationalCode = @NationalCode
-			AND [Year]       = @Year        
-			AND [Month]      = @Month       
+			AND [Year]   = @Year        
+			AND [Month]  = @Month       
 		GROUP BY [TafsiliCode] , [Year] , [Month] , [WorkshopName] , [NationalCode]
 	END
 END
