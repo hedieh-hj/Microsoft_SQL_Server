@@ -2,7 +2,7 @@
 	DROP PROCEDURE [salaryorash].[UpdateSalaryInfo]
 GO
 CREATE PROCEDURE [salaryorash].[UpdateSalaryInfo] 
-												   ---> از این پارامترها جهت جست و جوی سطرهایی که می خواهیم تغییر دهیم استفاده می کنیم .
+							 ---> از این پارامترها جهت جست و جوی سطرهایی که می خواهیم تغییر دهیم استفاده می کنیم .
 	@OldNationalCode				NVARCHAR(20) , 
 	@OldMonth					INT	     , 
 	@OldYear					INT          , 
@@ -47,19 +47,19 @@ BEGIN
 				InsuranceCode              = CASE WHEN @NewInsuranceCode			  IS NOT NULL THEN @NewInsuranceCode			  	  ELSE InsuranceCode               END ,
 				TimeAttendancePersonalCode = CASE WHEN @NewTimeAttendancePersonalCode 		  IS NOT NULL THEN @NewTimeAttendancePersonalCode		  ELSE TimeAttendancePersonalCode  END ,
 				JobPosition		   = CASE WHEN @NewJobPosition				  IS NOT NULL THEN @NewJobPosition				  ELSE JobPosition		   END ,
-				WorkshopCode		   = CASE WHEN @NewWorkshopCode				  IS NOT NULL THEN @NewWorkshopCode				  ELSE WorkshopCode		           END ,
-				WorkshopName		   = CASE WHEN @NewWorkshopName				  IS NOT NULL THEN @NewWorkshopName				  ELSE WorkshopName		           END ,
-				PersonalGroupCode          = CASE WHEN @NewPersonalGroupCode		          IS NOT NULL THEN @NewPersonalGroupCode		 	  ELSE PersonalGroupCode		   END ,
-				PersonalGroupName          = CASE WHEN @NewPersonalGroupName		          IS NOT NULL THEN @NewPersonalGroupName		 	  ELSE PersonalGroupName		   END ,
-				TafsiliCode2		   = CASE WHEN @NewTafsiliCode2				  IS NOT NULL THEN @NewTafsiliCode2				  ELSE TafsiliCode2		           END ,
-				TafsiliName2		   = CASE WHEN @NewTafsiliName2				  IS NOT NULL THEN @NewTafsiliName2				  ELSE TafsiliName2		           END ,
-				AddTitle		   = CASE WHEN @NewAddTitle			          IS NOT NULL THEN @NewAddTitle					  ELSE AddTitle		               END ,
-				AddAmount		   = CASE WHEN @NewAddAmount				  IS NOT NULL THEN @NewAddAmount				  ELSE AddAmount		           END ,
-				AddPrice		   = CASE WHEN @NewAddPrice				  IS NOT NULL THEN @NewAddPrice					  ELSE AddPrice		               END ,
-				MinTitle		   = CASE WHEN @NewMinTitle				  IS NOT NULL THEN @NewMinTitle					  ELSE MinTitle		               END ,
-				MinAmount		   = CASE WHEN @NewMinAmount				  IS NOT NULL THEN @NewMinAmount				  ELSE MinAmount		           END ,
-				MinPrice		   = CASE WHEN @NewMinPrice				  IS NOT NULL THEN @NewMinPrice					  ELSE MinPrice		               END ,
-				SumMinPrice		   = CASE WHEN @NewSumMinPrice				  IS NOT NULL THEN @NewSumMinPrice				  ELSE SumMinPrice		           END ,
+				WorkshopCode		   = CASE WHEN @NewWorkshopCode				  IS NOT NULL THEN @NewWorkshopCode				  ELSE WorkshopCode	           END ,
+				WorkshopName		   = CASE WHEN @NewWorkshopName				  IS NOT NULL THEN @NewWorkshopName				  ELSE WorkshopName	           END ,
+				PersonalGroupCode          = CASE WHEN @NewPersonalGroupCode		          IS NOT NULL THEN @NewPersonalGroupCode		 	  ELSE PersonalGroupCode	   END ,
+				PersonalGroupName          = CASE WHEN @NewPersonalGroupName		          IS NOT NULL THEN @NewPersonalGroupName		 	  ELSE PersonalGroupName	   END ,
+				TafsiliCode2		   = CASE WHEN @NewTafsiliCode2				  IS NOT NULL THEN @NewTafsiliCode2				  ELSE TafsiliCode2	           END ,
+				TafsiliName2		   = CASE WHEN @NewTafsiliName2				  IS NOT NULL THEN @NewTafsiliName2				  ELSE TafsiliName2	           END ,
+				AddTitle		   = CASE WHEN @NewAddTitle			          IS NOT NULL THEN @NewAddTitle					  ELSE AddTitle		           END ,
+				AddAmount		   = CASE WHEN @NewAddAmount				  IS NOT NULL THEN @NewAddAmount				  ELSE AddAmount	           END ,
+				AddPrice		   = CASE WHEN @NewAddPrice				  IS NOT NULL THEN @NewAddPrice					  ELSE AddPrice		           END ,
+				MinTitle		   = CASE WHEN @NewMinTitle				  IS NOT NULL THEN @NewMinTitle					  ELSE MinTitle		           END ,
+				MinAmount		   = CASE WHEN @NewMinAmount				  IS NOT NULL THEN @NewMinAmount				  ELSE MinAmount	           END ,
+				MinPrice		   = CASE WHEN @NewMinPrice				  IS NOT NULL THEN @NewMinPrice					  ELSE MinPrice		           END ,
+				SumMinPrice		   = CASE WHEN @NewSumMinPrice				  IS NOT NULL THEN @NewSumMinPrice				  ELSE SumMinPrice                 END ,
 				[Year]		           = CASE WHEN @NewYear					  IS NOT NULL THEN @NewYear				          ELSE [Year]	                   END ,
 				[Month]	                   = CASE WHEN @NewMonth				  IS NOT NULL THEN @NewMonth					  ELSE [Month]	                   END
 		WHERE   NationalCode = @OldNationalCode
