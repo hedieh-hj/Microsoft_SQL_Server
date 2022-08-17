@@ -62,9 +62,9 @@ BEGIN
 				SumMinPrice		   = CASE WHEN @NewSumMinPrice				  IS NOT NULL THEN @NewSumMinPrice				  ELSE SumMinPrice                 END ,
 				[Year]		           = CASE WHEN @NewYear					  IS NOT NULL THEN @NewYear				          ELSE [Year]	                   END ,
 				[Month]	                   = CASE WHEN @NewMonth				  IS NOT NULL THEN @NewMonth					  ELSE [Month]	                   END
-		WHERE   NationalCode = @OldNationalCode
-			AND [Month]      = @OldMonth
+		WHERE   NationalCode 	= @OldNationalCode
+			AND [Month]     = @OldMonth
 			AND [Year]      = @OldYear
-			AND TafsiliCode  = @OldTafsiliCode
-			AND RowNo        = @OldRowNo
+			AND TafsiliCode = @OldTafsiliCode
+			AND RowNo       = @OldRowNo
 END
