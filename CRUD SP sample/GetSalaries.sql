@@ -1,11 +1,7 @@
-﻿USE [salary_orash_ir]
+IF OBJECT_ID ('salaryorash.GetSalaries') IS NOT NULL  
+	DROP PROCEDURE [salaryorash].[GetSalaries]
 GO
-/****** Object:  StoredProcedure [salaryorash].[GetSalaries]    Script Date: 8/11/2022 9:46:39 AM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-ALTER PROCEDURE [salaryorash].[GetSalaries] 
+CREATE PROCEDURE [salaryorash].[GetSalaries] 
 	@NationalCode NVARCHAR(20) , ---> کد ملی
 	@Year	      INT	   , ---> سال
 	@Month	      INT            ---> ماه
